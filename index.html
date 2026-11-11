@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Noble Kings and Queens Academy | Abuja</title>
+    <meta name="description" content="Nursery, Primary and Secondary school in Abuja, Nigeria founded in 2011. Quality education and strong moral foundation.">
+    <!-- Link to external CSS stylesheet -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Tailwind CSS for rapid layout utilities -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0b2a5c',
+                        accent: '#a3262a',
+                        graylight: '#f8f9fa',
+                        graymid: '#6b7280'
+                    },
+                    fontFamily: {
+                        serif: ['Young Serif', 'serif'],
+                        sans: ['Instrument Sans', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-sans text-base text-[#111111] antialiased flex flex-col min-h-screen bg-white">
+
+    <!-- Loading Screen -->
+    <div id="loading-screen">
+        <div class="loader"></div>
+        <p>Loading Noble Kings and Queens Academy...</p>
+    </div>
+
+    <!-- Scroll to Top Button -->
+    <button id="scroll-to-top" onclick="scrollToTop()" aria-label="Scroll to top">
+        ↑
+    </button>
+
+    <!-- HEADER / NAVIGATION -->
+    <header class="border-b-2 border-primary pt-6 pb-4 px-6 md:px-12 sticky top-0 bg-white z-50">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <!-- Logo & School Name -->
+            <button onclick="navigate('home')" class="flex items-center gap-3 text-left focus:outline-none">
+                <img src="images/school-logo.png" alt="Noble Kings and Queens Academy Logo" class="h-10 w-auto object-contain">
+                <div>
+                    <h1 class="font-serif text-lg md:text-xl text-primary leading-none tracking-tight">NOBLE KINGS <br class="hidden md:block">AND QUEENS ACADEMY</h1>
+                </div>
+            </button>
+
+            <!-- Desktop Nav -->
+            <nav class="hidden lg:flex gap-4 pb-1">
+                <button onclick="navigate('home')" class="nav-link active-link" id="nav-home">Home</button>
+                <button onclick="navigate('about')" class="nav-link" id="nav-about">About</button>
+                <button onclick="navigate('academics')" class="nav-link" id="nav-academics">Academics</button>
+                <button onclick="navigate('facilities')" class="nav-link" id="nav-facilities">Facilities</button>
+                <button onclick="navigate('summer-camp')" class="nav-link" id="nav-summer-camp">Summer Camp</button>
+                <button onclick="navigate('gallery')" class="nav-link" id="nav-gallery">Gallery</button>
+                <button onclick="navigate('testimonials')" class="nav-link" id="nav-testimonials">Testimonials</button>
+                <button onclick="navigate('faq')" class="nav-link" id="nav-faq">FAQ</button>
+                <button onclick="navigate('verification')" class="nav-link" id="nav-verification">Staff Verification</button>
+                <button onclick="navigate('contact')" class="nav-link" id="nav-contact">Contact</button>
+            </nav>
+
+            <!-- Mobile Menu Button -->
+            <button onclick="toggleMobileMenu()" class="lg:hidden p-2 text-primary focus:outline-none" aria-label="Toggle Menu">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            </button>
+        </div>
+
+        <!-- Mobile Nav Drawer -->
+        <div id="mobile-menu" class="hidden lg:hidden flex flex-col gap-2 mt-4 pt-4 border-t border-gray-200">
+            <button onclick="navigate('home'); toggleMobileMenu();" class="text-left py-2 font-medium">Home</button>
+            <button onclick="navigate('about'); toggleMobileMenu();" class="text-left py-2 font-medium">About</button>
+            <button onclick="navigate('academics'); toggleMobileMenu();" class="text-left py-2 font-medium">Academics</button>
+            <button onclick="navigate('facilities'); toggleMobileMenu();" class="text-left py-2 font-medium">Facilities</button>
+            <button onclick="navigate('summer-camp'); toggleMobileMenu();" class="text-left py-2 font-medium">Summer Camp</button>
+            <button onclick="navigate('gallery'); toggleMobileMenu();" class="text-left py-2 font-medium">Gallery</button>
+            <button onclick="navigate('testimonials'); toggleMobileMenu();" class="text-left py-2 font-medium">Testimonials</button>
+            <button onclick="navigate('faq'); toggleMobileMenu();" class="text-left py-2 font-medium">FAQ</button>
+            <button onclick="navigate('verification'); toggleMobileMenu();" class="text-left py-2 font-medium">Staff Verification</button>
+            <button onclick="navigate('contact'); toggleMobileMenu();" class="text-left py-2 font-medium">Contact</button>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT CONTAINER -->
+    <main class="flex-grow w-full max-w-7xl mx-auto px-6 md:px-12 py-12">
+
+        <!-- ================= HOME PAGE ================= -->
+        <section id="home" class="page-section active">
+            <div class="grid md:grid-cols-12 gap-12 items-center mb-16">
+                <div class="md:col-span-8">
+                    <h2 class="font-serif text-5xl md:text-6xl text-primary leading-tight mb-6">Quality education and a strong moral foundation for the whole child.</h2>
+                    <p class="text-lg md:text-xl max-w-2xl mb-8 text-gray-700">Welcome to Noble Kings and Queens Academy, Abuja. Founded in 2011, we have dedicated ourselves to raising disciplined, intelligent, and well-rounded children prepared for tomorrow's world.</p>
+                    <div class="flex flex-wrap gap-4">
+                        <button onclick="navigate('contact')" class="btn-primary">Admissions Enquiry</button>
+                        <button onclick="navigate('about')" class="btn-outline">Our Story</button>
+                    </div>
+                </div>
+                <!-- Hero Image -->
+                <div class="md:col-span-4 h-64 md:h-[400px] w-full rounded-md overflow-hidden flex shadow-sm">
+                    <img src="images/nkqa_students.jpg" alt="Noble Kings and Queens Academy pupils in natural light" class="w-full h-full object-cover">
+                </div>
+            </div>
+
+            <div class="ankara-divider"></div>
+
+            <!-- Welcome Intro -->
+            <div class="max-w-3xl mb-16">
+                <h3 class="font-serif text-3xl text-primary mb-4">A Tradition of Excellence in Abuja</h3>
+                <p class="text-lg text-gray-700 mb-4">Located in the serene environment of Abuja, our institution provides a quiet, focused atmosphere free from distraction. We believe that true learning occurs when academic rigor is paired with strict moral guidance and excellent infrastructure.</p>
+            </div>
+
+            <!-- Three Key Strengths -->
+            <div class="grid md:grid-cols-3 gap-12 mb-16">
+                <div>
+                    <h3 class="font-serif text-2xl text-primary mb-4 border-b-2 border-accent pb-2 inline-block">Academic Rigor</h3>
+                    <p class="text-gray-700">We deliver a comprehensive curriculum that challenges our pupils, ensuring they master foundational subjects while developing critical thinking skills.</p>
+                </div>
+                <div>
+                    <h3 class="font-serif text-2xl text-primary mb-4 border-b-2 border-accent pb-2 inline-block">Moral Grounding</h3>
+                    <p class="text-gray-700">Education is incomplete without character. We instil discipline, respect, and integrity, preparing our students to lead with virtue.</p>
+                </div>
+                <div>
+                    <h3 class="font-serif text-2xl text-primary mb-4 border-b-2 border-accent pb-2 inline-block">Excellent Facilities</h3>
+                    <p class="text-gray-700">Our campus offers a science laboratory, a modern computer lab, and ample sporting grounds to ensure learning extends beyond the traditional classroom.</p>
+                </div>
+            </div>
+
+            <!-- Facilities Strip -->
+            <div class="bg-graylight p-8 md:p-12 flex flex-col md:flex-row gap-8 items-center justify-between border border-gray-200 rounded-sm">
+                <div>
+                    <h3 class="font-serif text-3xl text-primary mb-2">Explore Our Campus Facilities</h3>
+                    <p class="text-gray-700 max-w-xl">From our dedicated computer laboratory to our dedicated sports field and volleyball court, every space is designed to support student growth.</p>
+                </div>
+                <button onclick="navigate('facilities')" class="btn-primary whitespace-nowrap">View All Facilities</button>
+            </div>
+        </section>
+
+        <!-- ================= ABOUT PAGE ================= -->
+        <section id="about" class="page-section">
+            <div class="max-w-3xl mb-12">
+                <h2 class="font-serif text-4xl md:text-5xl text-primary mb-6">About Noble Kings and Queens Academy</h2>
+                <p class="text-xl text-gray-700">Founded in 2011 in Abuja, Nigeria, our school was built on a singular vision: to provide uncompromised educational standards coupled with a deep sense of moral duty.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12 mb-16 items-center">
+                <div>
+                    <h3 class="font-serif text-3xl text-primary mb-4">Our Mission & Values</h3>
+                    <p class="text-gray-700 mb-4">We are dedicated to the development of the whole, well-rounded child. Our core pillars are strict discipline, academic excellence, and spiritual and moral grounding.</p>
+                    <p class="text-gray-700">Every child who walks through our doors is treated as an individual of immense potential, guided by experienced educators who model integrity and dedication daily.</p>
+                </div>
+                <div class="border border-gray-300 p-6 bg-graylight rounded-sm">
+                    <h4 class="font-serif text-xl text-primary mb-3">Accreditation & Registration</h4>
+                    <p class="text-sm text-gray-700 mb-2"><strong>CAC Registration Number:</strong> [Insert CAC Number]</p>
+                    <p class="text-sm text-gray-700 mb-4"><strong>Ministry / FCT Approval Number:</strong> [Insert FCT Approval Number]</p>
+                    <p class="text-xs text-graymid">Fully recognized and approved by relevant educational authorities in the Federal Capital Territory, Abuja.</p>
+                </div>
+            </div>
+
+            <div class="ankara-divider"></div>
+
+            <!-- Proprietress Message -->
+            <div class="grid md:grid-cols-12 gap-12 items-center bg-graylight p-8 md:p-12 border border-gray-200 rounded-sm">
+                <div class="md:col-span-4 h-64 bg-gray-300 flex items-center justify-center text-center overflow-hidden">
+                    <img src="images/proprietress.jpg" alt="Proprietress of Noble Kings and Queens Academy" class="w-full h-full object-cover">
+                </div>
+                <div class="md:col-span-8">
+                    <h3 class="font-serif text-3xl text-primary mb-4">Message from the Proprietress</h3>
+                    <blockquote class="text-gray-700 italic mb-6">"When we established Noble Kings and Queens Academy in 2011, our goal was clear: to create an environment where children are safe to learn, grow in character, and discover their true intellectual capacities. We remain committed to partnering with parents to raise leaders of integrity."</blockquote>
+                    <p class="font-semibold text-primary">[Insert Proprietress Name]</p>
+                    <p class="text-sm text-graymid">Founder & Proprietress</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= ACADEMICS PAGE ================= -->
+        <section id="academics" class="page-section">
+            <div class="max-w-3xl mb-12">
+                <h2 class="font-serif text-4xl md:text-5xl text-primary mb-4">Academics</h2>
+                <p class="text-xl text-gray-700">A structured, progressive educational pathway tailored for every stage of your child's growth.</p>
+            </div>
+
+            <!-- Nursery -->
+            <div class="grid md:grid-cols-2 gap-12 items-center mb-16">
+                <div class="order-2 md:order-1">
+                    <h3 class="font-serif text-3xl text-primary mb-2">Nursery School</h3>
+                    <p class="text-accent font-semibold mb-4">Ages 3 – 5 years</p>
+                    <p class="mb-4 text-gray-700">The nursery years are crucial for cognitive and social development. Our early years program introduces basic literacy, numeracy, shape recognition, and vital social skills like sharing and listening.</p>
+                    <p class="text-gray-700">Co-curricular activities include structured play, creative arts, and foundational music.</p>
+                </div>
+                <img src="images/nursery_pupils.jpg" alt="Nursery pupils at Noble Kings and Queens Academy" class="order-1 md:order-2 h-64 w-full object-cover border border-gray-300 rounded-sm">
+            </div>
+
+            <div class="ankara-divider"></div>
+
+            <!-- Primary -->
+            <div class="grid md:grid-cols-2 gap-12 items-center mb-16">
+                <img src="images/primary_pupils.jpg" alt="Primary pupils in class at Noble Kings and Queens Academy" class="h-64 w-full object-cover border border-gray-300 rounded-sm">
+                <div>
+                    <h3 class="font-serif text-3xl text-primary mb-2">Primary School</h3>
+                    <p class="text-accent font-semibold mb-4">Ages 5 – 11 years</p>
+                    <p class="mb-4 text-gray-700">Our primary section builds on the nursery foundation, introducing a more structured academic framework across Mathematics, English Language, Basic Science, History, Civic Education, and Information Technology.</p>
+                    <p class="text-gray-700">Pupils participate in sports, debate clubs, and spelling competitions.</p>
+                </div>
+            </div>
+
+            <div class="ankara-divider"></div>
+
+            <!-- Secondary -->
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="order-2 md:order-1">
+                    <h3 class="font-serif text-3xl text-primary mb-2">Secondary School</h3>
+                    <p class="text-accent font-semibold mb-4">Ages 11 – 17 years</p>
+                    <p class="mb-4 text-gray-700">The secondary school prepares students for external examinations (WAEC, NECO, BECE) with rigorous subject teaching, laboratory practicals, and leadership mentorship.</p>
+                    <p class="text-gray-700">Co-curricular engagements include science clubs, volleyball team practice, debate societies, and community service projects.</p>
+                </div>
+                <img src="images/secondary_students.jpg" alt="Secondary students at Noble Kings and Queens Academy" class="order-1 md:order-2 h-64 w-full object-cover border border-gray-300 rounded-sm">
+            </div>
+        </section>
+
+        <!-- ================= FACILITIES PAGE ================= -->
+        <section id="facilities" class="page-section">
+            <div class="max-w-3xl mb-12">
+                <h2 class="font-serif text-4xl md:text-5xl text-primary mb-4">Campus & Facilities</h2>
+                <p class="text-xl text-gray-700">Designed to provide a secure, conducive, and stimulating environment for learning and physical development.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12 mb-12">
+                <div class="border border-gray-200 bg-graylight p-6 rounded-sm">
+                    <div class="h-48 bg-gray-300 mb-4 overflow-hidden rounded-sm">
+                        <img src="images/computer_lab.jpg" alt="Computer Laboratory" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="font-serif text-2xl text-primary mb-2">Computer Laboratory</h3>
+                        <p class="text-gray-700">Equipped with modern systems and reliable internet access, our computer lab ensures every pupil gains practical digital literacy from an early age.</p>
+                </div>
+                <div class="border border-gray-200 bg-graylight p-6 rounded-sm">
+                    <div class="h-48 bg-gray-300 mb-4 overflow-hidden rounded-sm">
+                        <img src="images/classrooms.jpg" alt="Conducive Classrooms" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="font-serif text-2xl text-primary mb-2">Conducive Classrooms</h3>
+                    <p class="text-gray-700">Spacious, well-ventilated, and quiet classrooms designed with low student-to-teacher ratios to encourage focused learning and personal attention.</p>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8 mb-12">
+                <div class="border border-gray-200 bg-graylight p-6 rounded-sm">
+                    <div class="h-40 bg-gray-300 mb-4 overflow-hidden rounded-sm">
+                        <img src="images/science_lab.jpg" alt="Science Laboratory" class="w-full h-full object-cover">
+                    </div>
+                    <h4 class="font-serif text-xl text-primary mb-2">Science Laboratory</h4>
+                    <p class="text-sm text-gray-700">Fully equipped chemistry, physics, and biology laboratories enabling secondary students to engage in hands-on scientific experimentation.</p>
+                </div>
+                <div class="border border-gray-200 bg-graylight p-6 rounded-sm">
+                    <div class="h-40 bg-gray-300 mb-4 overflow-hidden rounded-sm">
+                        <img src="images/school_field.jpg" alt="School Field" class="w-full h-full object-cover">
+                    </div>
+                    <h4 class="font-serif text-xl text-primary mb-2">School Field</h4>
+                    <p class="text-sm text-gray-700">An expansive grassed field for athletics, football matches, morning assembly, and outdoor co-curricular physical training.</p>
+                </div>
+                <div class="border border-gray-200 bg-graylight p-6 rounded-sm">
+                    <div class="h-40 bg-gray-300 mb-4 overflow-hidden rounded-sm">
+                        <img src="images/volleyball_court.jpg" alt="Volleyball Court" class="w-full h-full object-cover">
+                    </div>
+                    <h4 class="font-serif text-xl text-primary mb-2">Volleyball Court</h4>
+                    <p class="text-sm text-gray-700">A dedicated tarmac volleyball court where students build teamwork, coordination, and competitive spirit during sports hours.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= SUMMER CAMP PAGE ================= -->
+        <section id="summer-camp" class="page-section">
+            <div class="max-w-3xl mb-12">
+                <h2 class="font-serif text-4xl md:text-5xl text-primary mb-4">Summer Camp</h2>
+                <p class="text-xl text-gray-700">Empowering children with valuable technical, digital, and creative skills during the holiday break.</p>
+            </div>
+
+            <div class="grid md:grid-cols-12 gap-12 items-center mb-16">
+                <div class="md:col-span-8">
+                    <h3 class="font-serif text-3xl text-primary mb-4">Holiday Learning & Tech Skills</h3>
+                    <p class="text-gray-700 mb-4">We offer structured co-curricular activities during the summer where children can learn a variety of technical and digital skills alongside sports and arts.</p>
+                    <p class="text-gray-700 mb-6">Programs include introductory coding, basic computer maintenance, graphic design fundamentals, public speaking, and team sports on our volleyball court and school field.</p>
+                    <button onclick="navigate('contact')" class="btn-primary">Enquire About Summer Camp</button>
+                </div>
+                <div class="md:col-span-4 h-64 bg-gray-300 rounded-sm overflow-hidden flex">
+                    <img src="images/summer_camp.jpg" alt="Children at summer camp" class="w-full h-full object-cover">
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= STAFF VERIFICATION PAGE ================= -->
+        <section id="verification" class="page-section">
+            <div class="max-w-3xl mb-12">
+                <h2 class="font-serif text-4xl md:text-5xl text-primary mb-4">Staff Reference Verification</h2>
+                <p class="text-xl text-gray-700">Secure verification portal for employers and academic institutions.</p>
+            </div>
+
+            <div class="bg-graylight p-8 md:p-12 border border-gray-200 max-w-3xl rounded-sm mb-12">
+                <h3 class="font-serif text-2xl text-primary mb-4">How to Confirm Employment</h3>
+                <p class="text-gray-700 mb-6">Noble Kings and Queens Academy provides official reference verification to verified international and domestic employers. To confirm a staff member's employment history or character recommendation, please follow the guidelines below:</p>
+                
+                <ul class="list-disc pl-5 space-y-3 text-gray-700 mb-6">
+                    <li><strong>Official Email:</strong> Send requests strictly to <span class="text-primary font-semibold">[name@schooldomain]</span>.</li>
+                    <li><strong>Telephone Support:</strong> [Insert Phone Number] (Available Monday to Friday, 9:00 AM – 3:00 PM WAT).</li>
+                    <li><strong>Required Information:</strong> Include the staff member's full name, position held, and stated dates of employment in your request.</li>
+                    <li><strong>Turnaround Time:</strong> Expected response time is within <strong>2 working days</strong>.</li>
+                </ul>
+
+                <div class="border-t border-gray-300 pt-4">
+                    <p class="text-sm text-graymid"><strong>Important Note:</strong> All official verification letters are signed, stamped, and dispatched exclusively from the school's official domain email address.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= CONTACT PAGE ================= -->
+        <section id="contact" class="page-section">
+            <div class="max-w-3xl mb-12">
+                <h2 class="font-serif text-4xl md:text-5xl text-primary mb-4">Contact Us</h2>
+                <p class="text-xl text-gray-700">We welcome enquiries from parents, guardians, and prospective partners.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12 mb-16">
+                <div>
+                    <h3 class="font-serif text-2xl text-primary mb-4">School Office</h3>
+                    <p class="text-gray-700 mb-2"><strong>Address:</strong> [Insert Full Street Address], Abuja, Federal Capital Territory, Nigeria</p>
+                    <p class="text-gray-700 mb-2"><strong>Phone:</strong> [Insert Phone Numbers]</p>
+                    <p class="text-gray-700 mb-4"><strong>Official Email:</strong> [Insert Official Email Address]</p>
+
+                    <h4 class="font-serif text-xl text-primary mt-6 mb-2">Office Hours</h4>
+                    <p class="text-gray-700">Monday – Friday: 8:00 AM – 4:00 PM</p>
+                </div>
+
+                <!-- Simple Enquiry Form -->
+                <div class="bg-graylight p-8 border border-gray-200 rounded-sm">
+                    <h3 class="font-serif text-2xl text-primary mb-4">Send an Enquiry</h3>
+                    <form onsubmit="handleFormSubmit(event)" class="space-y-4">
+                        <div>
+                            <label class="block text-sm font-medium mb-1 text-gray-700">Full Name</label>
+                            <input type="text" required class="w-full p-3 border border-gray-300 bg-white focus:outline-none focus:border-primary">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium mb-1 text-gray-700">Email Address</label>
+                            <input type="email" required class="w-full p-3 border border-gray-300 bg-white focus:outline-none focus:border-primary">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium mb-1 text-gray-700">Enquiry Type</label>
+                            <select class="w-full p-3 border border-gray-300 bg-white focus:outline-none focus:border-primary">
+                                <option>Admissions Enquiry</option>
+                                <option>Summer Camp</option>
+                                <option>Staff Verification</option>
+                                <option>General Information</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium mb-1 text-gray-700">Message</label>
+                            <textarea rows="4" required class="w-full p-3 border border-gray-300 bg-white focus:outline-none focus:border-primary"></textarea>
+                        </div>
+                        <button type="submit" class="btn-primary w-full">Submit Enquiry</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Embedded Map Placeholder -->
+            <div class="w-full h-96 bg-gray-200 border border-gray-300 flex items-center justify-center rounded-sm">
+                <span class="text-graymid font-medium">[ Embedded Google Map: Abuja Location ]</span>
+            </div>
+        </section>
+
+        <!-- ================= FAQ SECTION ================= -->
+        <section id="faq" class="page-section">
+            <div class="max-w-3xl mb-12">
+                <h2 class="font-serif text-4xl md:text-5xl text-primary mb-4">Frequently Asked Questions</h2>
+                <p class="text-xl text-gray-700">Find answers to common questions about our school.</p>
+            </div>
+
+            <div class="max-w-3xl space-y-4">
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>What age groups do you accept?</span>
+                        <span class="faq-icon">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p class="text-gray-700">We accept children from age 3 (Nursery) through age 17 (Secondary). Our Nursery section serves ages 3-5, Primary 5-11, and Secondary 11-17.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>What curriculum do you follow?</span>
+                        <span class="faq-icon">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p class="text-gray-700">We follow the Nigerian national curriculum, preparing students for WAEC, NECO, and BECE examinations. Our approach combines academic rigor with moral development.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>How do I apply for admission?</span>
+                        <span class="faq-icon">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p class="text-gray-700">To apply, please contact our school office via phone or email, or use the enquiry form on this page. We will provide you with the admission requirements and schedule an assessment.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>Do you offer transportation services?</span>
+                        <span class="faq-icon">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p class="text-gray-700">Please contact our school office directly to inquire about transportation options and availability for your location.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>What facilities are available on campus?</span>
+                        <span class="faq-icon">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p class="text-gray-700">Our campus features a modern computer laboratory, science laboratories, conducive classrooms, a school field for athletics, and a volleyball court. Visit our Facilities page for more details.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= TESTIMONIALS SECTION ================= -->
+        <section id="testimonials" class="page-section">
+            <div class="max-w-3xl mb-12">
+                <h2 class="font-serif text-4xl md:text-5xl text-primary mb-4">What Parents Say</h2>
+                <p class="text-xl text-gray-700">Hear from parents in our community.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="testimonial-card">
+                    <p class="testimonial-quote">"The school has provided my children with an excellent education. The teachers are dedicated and the moral values instilled in the students are commendable."</p>
+                    <p class="testimonial-author">— Parent of JSS 2 Student</p>
+                </div>
+
+                <div class="testimonial-card">
+                    <p class="testimonial-quote">"Since enrolling my child at Noble Kings and Queens Academy, I've seen remarkable improvement in both academics and character. The school truly cares about each student."</p>
+                    <p class="testimonial-author">— Parent of Primary 4 Student</p>
+                </div>
+
+                <div class="testimonial-card">
+                    <p class="testimonial-quote">"The facilities are impressive and the learning environment is conducive. My children look forward to going to school every day."</p>
+                    <p class="testimonial-author">— Parent of Nursery 2 Student</p>
+                </div>
+
+                <div class="testimonial-card">
+                    <p class="testimonial-quote">"The summer camp program was fantastic. My children learned valuable tech skills while having fun. Highly recommended!"</p>
+                    <p class="testimonial-author">— Parent of SS 1 Student</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= GALLERY SECTION ================= -->
+        <section id="gallery" class="page-section">
+            <div class="max-w-3xl mb-12">
+                <h2 class="font-serif text-4xl md:text-5xl text-primary mb-4">School Gallery</h2>
+                <p class="text-xl text-gray-700">A glimpse into life at Noble Kings and Queens Academy.</p>
+            </div>
+
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="images/nkqa_students.jpg" alt="Students at Noble Kings and Queens Academy">
+                    <div class="gallery-overlay">
+                        <span class="gallery-caption">Our Students</span>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/nursery_pupils_a.jpeg" alt="Nursery pupils learning">
+                    <div class="gallery-overlay">
+                        <span class="gallery-caption">Nursery Class</span>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/students_in_lab.jpeg" alt="Students in science lab">
+                    <div class="gallery-overlay">
+                        <span class="gallery-caption">Science Lab</span>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/students_in_field.jpeg" alt="Students on school field">
+                    <div class="gallery-overlay">
+                        <span class="gallery-caption">Sports Activities</span>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/graduation.jpeg" alt="Graduation ceremony">
+                    <div class="gallery-overlay">
+                        <span class="gallery-caption">Graduation Day</span>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/careerday.jpeg" alt="Career day event">
+                    <div class="gallery-overlay">
+                        <span class="gallery-caption">Career Day</span>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/kg_teachers.jpeg" alt="Teachers with KG students">
+                    <div class="gallery-overlay">
+                        <span class="gallery-caption">Our Teachers</span>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/award_a.jpeg" alt="Award ceremony">
+                    <div class="gallery-overlay">
+                        <span class="gallery-caption">Awards</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= NEWSLETTER SECTION ================= -->
+        <section id="newsletter" class="page-section">
+            <div class="newsletter-section max-w-4xl mx-auto">
+                <h3 class="font-serif text-3xl">Stay Updated</h3>
+                <p class="mb-6">Subscribe to our newsletter for school news, events, and updates.</p>
+                <form class="newsletter-form" onsubmit="handleNewsletterSubmit(event)">
+                    <input type="email" placeholder="Enter your email address" required>
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER (Present on every page) -->
+    <footer class="bg-primary text-white mt-auto py-12 px-6 md:px-12 border-t-4 border-accent">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-4 gap-8">
+            <div>
+                <h3 class="font-serif text-2xl mb-2">Noble Kings and Queens Academy</h3>
+                <p class="text-sm text-gray-300 mb-1">[Insert Full Street Address], Abuja, Nigeria</p>
+                <p class="text-sm text-gray-300 mb-1">Phone: [Insert Phone Numbers]</p>
+                <p class="text-sm text-gray-300">Email: [Insert Official Email]</p>
+                <div class="social-links">
+                    <a href="#" class="social-link" aria-label="Facebook">
+                        <svg fill="currentColor" viewBox="0 0 24 24"><path d="M18.77,7.46H14.5v-1.9c0-.9.6-1.1,1-1.1h3V.5h-4.33C10.24.5,9.5,3.44,9.5,5.32v2.15h-3v4h3v12h5v-12h3.85l.42-4Z"/></svg>
+                    </a>
+                    <a href="#" class="social-link" aria-label="Twitter">
+                        <svg fill="currentColor" viewBox="0 0 24 24"><path d="M23.95,4.57a10,10,0,0,1-2.82.77,4.96,4.96,0,0,0,2.16-2.72,9.9,9.9,0,0,1-3.12,1.19,4.92,4.92,0,0,0-8.39,4.49A14,14,0,0,1,1.64,3.16,4.92,4.92,0,0,0,3.16,9.72,4.86,4.86,0,0,1,.95,4.17,4.92,4.92,0,0,0,4,4.83a4.86,4.86,0,0,1-2.23-.08,4.92,4.92,0,0,0,4.6,3.42A9.86,9.86,0,0,1,0,19.54a13.94,13.94,0,0,0,7.55,2.21A13.9,13.9,0,0,0,21.55,7.82c0-.21,0-.42,0-.63A10,10,0,0,0,24,4.59Z"/></svg>
+                    </a>
+                    <a href="#" class="social-link" aria-label="Instagram">
+                        <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12,2.16c3.2,0,3.58,0,4.85.07a6.65,6.65,0,0,1,2.23.41,4,4,0,0,1,2.28,2.28,6.65,6.65,0,0,1,.41,2.23c.06,1.27.07,1.65.07,4.85s0,3.58-.07,4.85a6.65,6.65,0,0,1-.41,2.23,4,4,0,0,1-2.28,2.28,6.65,6.65,0,0,1-2.23.41c-1.27.06-1.65.07-4.85.07s-3.58,0-4.85-.07a6.65,6.65,0,0,1-2.23-.41,4,4,0,0,1-2.28-2.28,6.65,6.65,0,0,1-.41-2.23C2.24,15.58,2.23,15.2,2.23,12s0-3.58.07-4.85a6.65,6.65,0,0,1,.41-2.23A4,4,0,0,1,5,2.64a6.65,6.65,0,0,1,2.23-.41C8.5,2.17,8.88,2.16,12,2.16ZM12,0C8.74,0,8.33,0,7.05.07A8.81,8.81,0,0,0,4.14.56,6.13,6.13,0,0,0,.56,4.14,8.81,8.81,0,0,0,.07,7.05C0,8.33,0,8.74,0,12s0,3.67.07,4.95a8.81,8.81,0,0,0,.49,2.91,6.13,6.13,0,0,0,3.58,3.58,8.81,8.81,0,0,0,2.91.49C8.33,24,8.74,24,12,24s3.67,0,4.95-.07a8.81,8.81,0,0,0,2.91-.49,6.13,6.13,0,0,0,3.58-3.58,8.81,8.81,0,0,0,.49-2.91C24,15.67,24,15.26,24,12s0-3.67-.07-4.95a8.81,8.81,0,0,0-.49-2.91,6.13,6.13,0,0,0-3.58-3.58A8.81,8.81,0,0,0,16.95.07C15.67,0,15.26,0,12,0Z"/><path d="M12,5.84A6.16,6.16,0,1,0,18.16,12,6.16,6.16,0,0,0,12,5.84ZM12,16a4,4,0,1,1,4-4A4,4,0,0,1,12,16Z"/><circle cx="18.41" cy="5.59" r="1.44"/></svg>
+                    </a>
+                    <a href="#" class="social-link" aria-label="YouTube">
+                        <svg fill="currentColor" viewBox="0 0 24 24"><path d="M23.5,6.18a3,3,0,0,0-2.12-2.12C19.5,3.5,12,3.5,12,3.5s-7.5,0-9.38.56A3,3,0,0,0,.5,6.18,31.64,31.64,0,0,0,0,12a31.64,31.64,0,0,0,.5,5.82,3,3,0,0,0,2.12,2.12C4.5,20.5,12,20.5,12,20.5s7.5,0,9.38-.56a3,3,0,0,0,2.12-2.12A31.64,31.64,0,0,0,24,12,31.64,31.64,0,0,0,23.5,6.18ZM9.55,15.57V8.43L15.82,12Z"/></svg>
+                    </a>
+                </div>
+            </div>
+            <div>
+                <h4 class="font-serif text-xl mb-4">Quick Links</h4>
+                <div class="footer-links">
+                    <a href="#" onclick="navigate('home')" class="footer-link">Home</a>
+                    <a href="#" onclick="navigate('about')" class="footer-link">About Us</a>
+                    <a href="#" onclick="navigate('academics')" class="footer-link">Academics</a>
+                    <a href="#" onclick="navigate('facilities')" class="footer-link">Facilities</a>
+                    <a href="#" onclick="navigate('contact')" class="footer-link">Contact</a>
+                </div>
+            </div>
+            <div>
+                <h4 class="font-serif text-xl mb-4">Information</h4>
+                <div class="footer-links">
+                    <a href="#" onclick="navigate('faq')" class="footer-link">FAQ</a>
+                    <a href="#" onclick="navigate('testimonials')" class="footer-link">Testimonials</a>
+                    <a href="#" onclick="navigate('gallery')" class="footer-link">Gallery</a>
+                    <a href="#" onclick="navigate('verification')" class="footer-link">Staff Verification</a>
+                    <a href="#" onclick="navigate('summer-camp')" class="footer-link">Summer Camp</a>
+                </div>
+            </div>
+            <div>
+                <h4 class="font-serif text-xl mb-4">School Info</h4>
+                <p class="text-sm text-gray-300 mb-2">Founded 2011</p>
+                <p class="text-xs text-gray-400 mb-4">Quality education and a strong moral foundation for the development of a whole, well-rounded child.</p>
+                <button onclick="navigate('newsletter')" class="btn-primary text-sm">Subscribe to Newsletter</button>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto mt-8 pt-8 border-t border-gray-700 text-center text-sm text-gray-400">
+            <p>&copy; 2024 Noble Kings and Queens Academy. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- NAVIGATION SCRIPT -->
+    <script>
+        // Initialize - Show home section and hide loading screen
+        window.addEventListener('load', function() {
+            // Hide loading screen
+            setTimeout(() => {
+                const loadingScreen = document.getElementById('loading-screen');
+                if (loadingScreen) {
+                    loadingScreen.classList.add('hidden');
+                }
+            }, 1000);
+
+            // Show home section
+            navigate('home');
+        });
+
+        function navigate(pageId) {
+            // Hide all sections
+            const sections = document.querySelectorAll('.page-section');
+            sections.forEach(sec => sec.classList.remove('active'));
+
+            // Show target section
+            const target = document.getElementById(pageId);
+            if (target) {
+                target.classList.add('active');
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+
+            // Update nav link active states
+            const navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(link => link.classList.remove('active-link'));
+
+            const activeNav = document.getElementById('nav-' + pageId);
+            if (activeNav) {
+                activeNav.classList.add('active-link');
+            }
+        }
+
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+            menu.classList.toggle('open');
+        }
+
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            alert('Thank you for your enquiry. We will get back to you shortly.');
+            event.target.reset();
+        }
+
+        function handleNewsletterSubmit(event) {
+            event.preventDefault();
+            alert('Thank you for subscribing to our newsletter!');
+            event.target.reset();
+        }
+
+        function toggleFaq(element) {
+            const answer = element.nextElementSibling;
+            const icon = element.querySelector('.faq-icon');
+
+            answer.classList.toggle('open');
+            icon.classList.toggle('open');
+        }
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Scroll to top button visibility
+        window.addEventListener('scroll', function() {
+            const scrollButton = document.getElementById('scroll-to-top');
+            if (window.scrollY > 300) {
+                scrollButton.classList.add('visible');
+            } else {
+                scrollButton.classList.remove('visible');
+            }
+        });
+    </script>
+</body>
+</html>
